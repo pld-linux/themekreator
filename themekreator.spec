@@ -7,6 +7,7 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/themekreator/%{name}-%{version}.tar.gz
 # Source0-md5:	323c95e65ccd9a94eba29039fd7b2e48
 URL:		http://www.matthiaswetzka.de/themekreator.en.php
+Patch0:		%{name}-fix_build.patch
 BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,6 +19,7 @@ phones.
 
 %prep
 %setup -q
+%patch0 -p1
 %configure
 
 %build
