@@ -1,0 +1,11 @@
+--- themekreator-0.3.orig/src/config/settingsdialog.h	2008-01-20 13:11:35.286429733 +0100
++++ themekreator-0.3/src/config/settingsdialog.h	2008-01-20 13:15:16.087485480 +0100
+@@ -28,7 +28,7 @@
+ class SettingsDialog : public KConfigDialog
+ {
+ public:
+-   SettingsDialog::SettingsDialog(QWidget *parent, const char *name,KConfigSkeleton *config);
++   SettingsDialog(QWidget *parent, const char *name,KConfigSkeleton *config);
+ 
+     ~SettingsDialog();
+ 
