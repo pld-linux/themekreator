@@ -1,4 +1,5 @@
 Summary:	SonyEricsson display theme creator
+Summary(pl.UTF-8):	Kreator motywów dla wyświetlaczy SonyEricsson
 Name:		themekreator
 Version:	0.3
 Release:	0.4
@@ -6,8 +7,8 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/themekreator/%{name}-%{version}.tar.gz
 # Source0-md5:	323c95e65ccd9a94eba29039fd7b2e48
-URL:		http://www.matthiaswetzka.de/themekreator.en.php
 Patch0:		%{name}-fix_build.patch
+URL:		http://www.matthiaswetzka.de/themekreator.en.php
 BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,12 +18,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ThemeKreator is a program to create themes for SonyEricsson mobile
 phones.
 
+%description -l pl.UTF-8
+ThemeKreator to program do tworzenia motywów dla telefonów komórkowych
+SonyEricsson.
+
 %prep
 %setup -q
 %patch0 -p1
-%configure
 
 %build
+%configure
 %{__make}
 
 %install
@@ -39,9 +44,6 @@ mv $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/themekreator.desktop \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
